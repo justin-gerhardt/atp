@@ -8,4 +8,5 @@ clean:
 
 .PHONY: deploy
 deploy: clean build
+	chmod o+x ./bin/* # lambda can't run the binary unless we set the other execute permission
 	sls deploy --verbose

@@ -1,43 +1,39 @@
 package main
 
 import (
-	"bytes"
 	"context"
-	"encoding/json"
+	"errors"
+	"log"
+	"net/http"
+	"strconv"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-// Response is of type APIGatewayProxyResponse since we're leveraging the
-// AWS Lambda Proxy Request functionality (default behavior)
-//
-// https://serverless.com/framework/docs/providers/aws/events/apigateway/#lambda-proxy-integration
 type Response events.APIGatewayProxyResponse
 
-// Handler is our lambda handler invoked by the `lambda.Start` function call
 func Handler(ctx context.Context) (Response, error) {
-	var buf bytes.Buffer
-
-	body, err := json.Marshal(map[string]interface{}{
-		"message": "Go Serverless v1.0! Your function executed successfully!",
-	})
+	stream, err := http.Get("http://marco.org:8001/listen")
+	//stream, err := http.Get("https://httpstat.us/401")
 	if err != nil {
-		return Response{StatusCode: 404}, err
+		log.Fatal("The request to marco.org failed")
+		return Response{}, err
 	}
-	json.HTMLEscape(&buf, body)
-
-	resp := Response{
-		StatusCode:      200,
-		IsBase64Encoded: false,
-		Body:            buf.String(),
-		Headers: map[string]string{
-			"Content-Type":           "application/json",
-			"X-MyCompany-Func-Reply": "hello-handler",
-		},
+	defer stream.Body.Close()
+	
+	if stream.StatusCode != http.StatusOK {
+		if stream.StatusCode == http.StatusNotFound {
+			log.Println("The stream is not active")
+			return Response{Body: "The stream is not active", StatusCode: 200}, nil
+		} 
+		log.Fatal("The stream returned a unexpected code: " + strconv.Itoa(stream.StatusCode))
+		return Response{Body: "The stream returned a unexpected code: " + strconv.Itoa(stream.StatusCode), StatusCode: 200}, errors.New("The stream returned a unexpected code: " + strconv.Itoa(stream.StatusCode))
 	}
 
-	return resp, nil
+	log.Println("Stream is up")
+	return Response{Body: "Stream is up", StatusCode: 200}, nil
+
 }
 
 func main() {
