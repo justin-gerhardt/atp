@@ -8,3 +8,4 @@ branches:
   - master
 before_install:
 - npm install
+- curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh  
