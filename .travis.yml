@@ -1,0 +1,10 @@
+language: go
+go:
+  - "1.11"
+script:
+- travis_wait 45 make deploy
+branches:
+  only:
+  - master
+before_install:
+- npm install

@@ -22,3 +22,113 @@ functions:
       - http:
           path: hello
           method: get
+resources:
+  Resources:
+    DockerRepo:
+      Type: AWS::ECR::Repository
+      Properties: 
+        RepositoryName: atp-downloader-repo
+    TaskExecutionRole:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - ecs-tasks.amazonaws.com
+              Action: sts:AssumeRole
+        ManagedPolicyArns:
+          - arn:aws:iam::aws:policy/AdministratorAccess
+    TaskLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties: 
+        LogGroupName: ATP-Downloader-Task
+        RetentionInDays: 7
+    DownloadTask:
+      Type: AWS::ECS::TaskDefinition
+      Properties: 
+        ExecutionRoleArn: 
+          "Fn::GetAtt": [TaskExecutionRole, Arn]
+        Cpu: 256
+        Memory: 512
+        NetworkMode: awsvpc
+        RequiresCompatibilities:
+          - FARGATE
+        ContainerDefinitions:
+          - Name: ATP-Stream-Downloader
+            Command:
+              - -i
+              - https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3
+              - -stats
+            # EntryPoint:
+            #   - String
+            # Environment:
+            #   - KeyValuePair
+            Image: 
+              Fn::Join: [ "", [ Fn::Join: [ ".", [ Ref: "AWS::AccountId", "dkr.ecr", Ref: "AWS::Region", Fn::Join: [ "/", [ "amazonaws.com", Ref: "DockerRepo", "jrottenberg/ffmpeg:4.0-scratch" ] ] ] ] ] ]
+            MemoryReservation: 512
+            LogConfiguration:
+              LogDriver: awslogs
+              Options:
+                awslogs-group: ATP-Downloader-Task
+                awslogs-region: ${opt:region, self:provider.region}
+                awslogs-stream-prefix: ecs
+    ECSCluster:
+      Type: AWS::ECS::Cluster
+      Properties:
+        ClusterName: ATP-Downloader-Cluster
+    VPC:
+      Type: "AWS::EC2::VPC"
+      Properties:
+        CidrBlock: 10.123.0.0/16
+        Tags:
+          - Key: Name
+            Value: AtpDownloaderVpc
+    VPCGateway:
+      Type: "AWS::EC2::InternetGateway"
+    VPCGatewayAttachment:
+      Type: "AWS::EC2::VPCGatewayAttachment"
+      Properties:
+        InternetGatewayId:
+          Ref: VPCGateway
+        VpcId:
+          Ref: VPC
+    VPCSubnet:
+      Type: "AWS::EC2::Subnet"
+      Properties:
+        CidrBlock: 10.123.0.0/20
+        MapPublicIpOnLaunch: true
+        VpcId:
+          Ref: VPC
+        Tags:
+          - Key: Name
+            Value: ATPDownloaderSubnet
+    VPCRouteTableAssociation:
+      Type: "AWS::EC2::SubnetRouteTableAssociation"
+      Properties:
+        RouteTableId:
+          Ref: VPCRouteTable
+        SubnetId:
+          Ref: VPCSubnet
+    VPCRouteTable:
+      Type: "AWS::EC2::RouteTable"
+      Properties:
+        VpcId:
+          Ref: VPC
+    VPCIPv4Route:
+      Type: "AWS::EC2::Route"
+      DependsOn: VPCGatewayAttachment
+      Properties:
+        DestinationCidrBlock: 0.0.0.0/0
+        GatewayId:
+          Ref: VPCGateway
+        RouteTableId:
+          Ref: VPCRouteTable
+    VPCSecurityGroup:
+      Type: "AWS::EC2::SecurityGroup"
+      Properties:
+        GroupDescription: ATP Downloader Container
+        VpcId:
+          Ref: VPC

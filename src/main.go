@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"errors"
 	"log"
 	"net/http"
 	"strconv"
@@ -14,26 +13,32 @@ import (
 type Response events.APIGatewayProxyResponse
 
 func Handler(ctx context.Context) (Response, error) {
+	if isLive() {
+
+	}
+	return Response{Body: "aaaaaaa", StatusCode: 200}, nil
+
+}
+
+func isLive() bool {
 	stream, err := http.Get("http://marco.org:8001/listen")
 	//stream, err := http.Get("https://httpstat.us/401")
 	if err != nil {
 		log.Fatal("The request to marco.org failed")
-		return Response{}, err
+		return false
 	}
 	defer stream.Body.Close()
-	
+
 	if stream.StatusCode != http.StatusOK {
 		if stream.StatusCode == http.StatusNotFound {
 			log.Println("The stream is not active")
-			return Response{Body: "The stream is not active", StatusCode: 200}, nil
-		} 
+			return false
+		}
 		log.Fatal("The stream returned a unexpected code: " + strconv.Itoa(stream.StatusCode))
-		return Response{Body: "The stream returned a unexpected code: " + strconv.Itoa(stream.StatusCode), StatusCode: 200}, errors.New("The stream returned a unexpected code: " + strconv.Itoa(stream.StatusCode))
+		return false
 	}
-
-	log.Println("Stream is up")
-	return Response{Body: "Stream is up", StatusCode: 200}, nil
-
+	log.Println("The stream is live")
+	return true
 }
 
 func main() {
