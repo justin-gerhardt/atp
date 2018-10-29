@@ -1,6 +1,6 @@
 build:
-	dep ensure -v
-	env GOOS=linux go build -ldflags="-s -w" -o bin/hello src/main.go
+#	dep ensure -v
+#	env GOOS=linux go build -ldflags="-s -w" -o bin/hello src/main.go
 
 .PHONY: clean
 clean:
@@ -8,5 +8,6 @@ clean:
 
 .PHONY: deploy
 deploy: clean build
-	chmod o+x ./bin/* # lambda can't run the binary unless we set the other execute permission
-	sls deploy --verbose
+#	chmod o+x ./bin/* # lambda can't run the binary unless we set the other execute permission
+#	sls deploy --verbose
+	img build --no-console -t atp-downloader ./downloader_task
