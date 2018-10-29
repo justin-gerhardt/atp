@@ -3,7 +3,7 @@ provider:
   name: aws
   runtime: go1.x
   stage: prod
-  region: us-east-1
+  region: ${env:AWS_DEFAULT_REGION, "us-east-1"}
   versionFunctions: false
   memorySize: 128
   timeout: 30
