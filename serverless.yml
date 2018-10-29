@@ -132,3 +132,7 @@ resources:
         GroupDescription: ATP Downloader Container
         VpcId:
           Ref: VPC
+  Outputs:
+      EcrRepoUrl:
+        Value:
+          Fn::Join: [ "", [ Fn::Join: [ ".", [ Ref: "AWS::AccountId", "dkr.ecr", Ref: "AWS::Region", Fn::Join: [ "/", [ "amazonaws.com", Ref: "DockerRepo" ] ] ] ] ] ]
