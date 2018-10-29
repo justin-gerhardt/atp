@@ -10,3 +10,7 @@ clean:
 deploy: clean build
 	chmod o+x ./bin/* # lambda can't run the binary unless we set the other execute permission
 	sls deploy --verbose
+	$(eval REPO_URL := $(shell sls info --verbose | sed --regexp-extended --quiet 's|EcrRepoUrl: (.*)|\1|p'))
+	docker build -t atp-downloader ./downloader_task
+	docker tag atp-downloader $(REPO_URL)
+	docker push $(REPO_URL)

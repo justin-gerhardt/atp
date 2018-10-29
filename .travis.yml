@@ -1,6 +1,9 @@
 language: go
 go:
   - "1.11"
+sudo: required
+services:
+  - docker
 script:
 - travis_wait 45 make deploy
 branches:
@@ -9,4 +12,6 @@ branches:
 before_install:
 - npm install
 - export PATH=./node_modules/.bin:$PATH
-- curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh  
+- curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+- pip install --user awscli
+- eval $(aws ecr get-login --no-include-email)
