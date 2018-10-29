@@ -9,4 +9,7 @@ branches:
 before_install:
 - npm install
 - export PATH=./node_modules/.bin:$PATH
-- curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh  
+- curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+- sudo apt-get install -y uidmap libseccomp-dev
+- sudo curl -fSL "https://github.com/genuinetools/img/releases/download/v0.5.1/img-linux-amd64" -o "/usr/local/bin/img"
+- sudo chmod a+x "/usr/local/bin/img"
