@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -42,5 +43,9 @@ func isLive() bool {
 }
 
 func main() {
+	if os.Getenv("IS_OFFLINE") == "TRUE" {
+		Handler(nil)
+		return
+	}
 	lambda.Start(Handler)
 }
