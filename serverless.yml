@@ -57,6 +57,8 @@ resources:
       Properties: 
         ExecutionRoleArn: 
           "Fn::GetAtt": [TaskExecutionRole, Arn]
+        TaskRoleArn:
+          "Fn::GetAtt": [TaskExecutionRole, Arn]
         Cpu: 256
         Memory: 512
         NetworkMode: awsvpc
