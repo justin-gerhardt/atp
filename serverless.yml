@@ -60,16 +60,12 @@ resources:
           - FARGATE
         ContainerDefinitions:
           - Name: ATP-Stream-Downloader
-            Command:
-              - -i
-              - https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3
-              - -stats
             # EntryPoint:
             #   - String
             # Environment:
             #   - KeyValuePair
             Image: 
-              Fn::Join: [ "", [ Fn::Join: [ ".", [ Ref: "AWS::AccountId", "dkr.ecr", Ref: "AWS::Region", Fn::Join: [ "/", [ "amazonaws.com", Ref: "DockerRepo", "jrottenberg/ffmpeg:4.0-scratch" ] ] ] ] ] ]
+              Fn::Join: [ "", [ Fn::Join: [ ".", [ Ref: "AWS::AccountId", "dkr.ecr", Ref: "AWS::Region", Fn::Join: [ "/", [ "amazonaws.com", Ref: "DockerRepo" ] ] ] ] ] ]
             MemoryReservation: 512
             LogConfiguration:
               LogDriver: awslogs
