@@ -28,6 +28,8 @@ resources:
       Type: AWS::ECR::Repository
       Properties: 
         RepositoryName: atp-downloader-repo
+        LifecyclePolicy:
+          LifecyclePolicyText: '{"rules": [{ "rulePriority": 10, "description": "Delete old images", "selection": { "tagStatus": "any", "countType": "imageCountMoreThan", "countNumber": 10 }, "action": { "type": "expire" }}]}'
     TaskExecutionRole:
       Type: AWS::IAM::Role
       Properties:
