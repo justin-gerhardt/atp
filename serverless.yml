@@ -16,8 +16,8 @@ package:
    - ./bin/**
 
 functions:
-  hello:
-    handler: bin/hello
+  StreamStatus:
+    handler: bin/StreamStatus
     environment:
       CLUSTER:
         "Fn::GetAtt": [ECSCluster, Arn]
