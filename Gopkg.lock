@@ -13,6 +13,44 @@
   version = "v1.6.0"
 
 [[projects]]
+  name = "github.com/aws/aws-sdk-go"
+  packages = [
+    "aws",
+    "aws/awserr",
+    "aws/awsutil",
+    "aws/client",
+    "aws/client/metadata",
+    "aws/corehandlers",
+    "aws/credentials",
+    "aws/credentials/ec2rolecreds",
+    "aws/credentials/endpointcreds",
+    "aws/credentials/stscreds",
+    "aws/csm",
+    "aws/defaults",
+    "aws/ec2metadata",
+    "aws/endpoints",
+    "aws/request",
+    "aws/session",
+    "aws/signer/v4",
+    "internal/ini",
+    "internal/sdkio",
+    "internal/sdkrand",
+    "internal/sdkuri",
+    "internal/shareddefaults",
+    "private/protocol",
+    "private/protocol/json/jsonutil",
+    "private/protocol/jsonrpc",
+    "private/protocol/query",
+    "private/protocol/query/queryutil",
+    "private/protocol/rest",
+    "private/protocol/xml/xmlutil",
+    "service/ecs",
+    "service/sts"
+  ]
+  revision = "fbdf992ab2dd55986179007336fc2072ea2d4eab"
+  version = "v1.15.65"
+
+[[projects]]
   branch = "master"
   name = "github.com/fnproject/fdk-go"
   packages = [
@@ -21,9 +59,20 @@
   ]
   revision = "1c783fe496250a3e27445273fb43cace6fd4ee2b"
 
+[[projects]]
+  name = "github.com/jmespath/go-jmespath"
+  packages = ["."]
+  revision = "0b12d6b5"
+
+[[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
+  version = "v0.8.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "f3247146380ebd39c3104856076cfa1375eda34a6a7c9acfd5c500438fd4b35a"
+  inputs-digest = "948678af2538597cedf45ebd863bfcefcede323a9ec004cefa5534547c26e1cb"
   solver-name = "gps-cdcl"
   solver-version = 1

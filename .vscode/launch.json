@@ -12,7 +12,13 @@
             "showLog": true,
             "program": "${workspaceRoot}/src/main.go",
             "env": {
-                "IS_OFFLINE": "TRUE"
+                "IS_OFFLINE": "TRUE",
+                "CLUSTER": "arn:aws:ecs:us-east-1:558709501430:cluster/ATP-Downloader-Cluster",
+                "TASK_DEFINITION": "arn:aws:ecs:us-east-1:558709501430:task-definition/ATP-Downloader-prod-DownloadTask-1EJDN89WSKXFJ:1",
+                "SUBNET": "subnet-03f51f3a870f14b08",
+                "SECURITY_GROUP": "sg-022d85b2c13e03618",
+                "AWS_REGION": "us-east-1",
+                "AWS_DEFAULT_REGION": "us-east-1"
             },
             "args": []
         }

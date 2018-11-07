@@ -18,6 +18,15 @@ package:
 functions:
   hello:
     handler: bin/hello
+    environment:
+      CLUSTER:
+        "Fn::GetAtt": [ECSCluster, Arn]
+      TASK_DEFINITION:
+        Ref: DownloadTask
+      SECURITY_GROUP:
+        "Fn::GetAtt": [VPCSecurityGroup, GroupId]
+      SUBNET:
+        Ref: VPCSubnet
     events:
       - http:
           path: hello
