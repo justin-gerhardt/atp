@@ -7,7 +7,6 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -83,8 +82,6 @@ func launchDownloaderTask() error {
 	}
 	return nil
 }
-
-type response events.APIGatewayProxyResponse
 
 func handler(ctx context.Context) error {
 	live, err := isLive()
