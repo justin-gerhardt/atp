@@ -86,20 +86,20 @@ func launchDownloaderTask() error {
 
 type response events.APIGatewayProxyResponse
 
-func handler(ctx context.Context) (response, error) {
+func handler(ctx context.Context) error {
 	live, err := isLive()
 	if err != nil {
 		log.Printf("%s", err)
-		return response{}, err
+		return err
 	}
 	if live {
 		err := launchDownloaderTask()
 		if err != nil {
 			log.Printf("%s", err)
-			return response{}, err
+			return err
 		}
 	}
-	return response{Body: "aaaaaaa", StatusCode: 200}, nil
+	return nil
 
 }
 
@@ -124,7 +124,7 @@ func isLive() (bool, error) {
 
 func main() {
 	if os.Getenv("IS_OFFLINE") == "TRUE" {
-	    handler(nil)
+		handler(nil)
 		return
 	}
 	lambda.Start(handler)

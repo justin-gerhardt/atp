@@ -28,6 +28,7 @@ functions:
       SUBNET:
         Ref: VPCSubnet
     events:
+      - schedule: rate(1 minute)
       - http:
           path: hello
           method: get
