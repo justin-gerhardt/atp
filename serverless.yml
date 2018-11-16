@@ -8,6 +8,7 @@ provider:
   memorySize: 128
   timeout: 30
   logRetentionInDays: 1
+  role: lambdaDefaultRole
 
 package:
  exclude:
@@ -16,6 +17,23 @@ package:
    - ./bin/**
 
 functions:
+  RSS:
+    handler: bin/RSS
+    environment:
+      BASE_URL: https://atp-episodes.s3.amazonaws.com # can't use reference because that creates a circular reference
+    events:
+      - s3: 
+          bucket: atp-episodes
+          event: "s3:ObjectCreated:*"
+          rules:
+            - prefix: incoming/
+            - suffix: .mp3
+      - s3: 
+          bucket: atp-episodes
+          event: "s3:ObjectRemoved:*"
+          rules:
+            - prefix: processed/
+            - suffix: .mp3
   StreamStatus:
     handler: bin/StreamStatus
     environment:
@@ -28,13 +46,39 @@ functions:
       SUBNET:
         Ref: VPCSubnet
     events:
-      - schedule: rate(1 minute)
+      - schedule: rate(3 minutes)
 resources:
   Resources:
-    EpisodeBucket:
+    lambdaDefaultRole:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        ManagedPolicyArns:
+          - arn:aws:iam::aws:policy/AdministratorAccess
+    S3BucketAtpepisodes: # name must be this for serverless to wire up the events
       Type: AWS::S3::Bucket
       Properties: 
         BucketName: atp-episodes
+    RSSLambdaPermissionAtpepisodesS3: # name must be this for serverless to wire up the events
+      Type: AWS::Lambda::Permission
+      Properties:
+        FunctionName:
+          "Fn::GetAtt": [RSSLambdaFunction, Arn]
+        Action: lambda:InvokeFunction
+        Principal: s3.amazonaws.com
+        SourceArn: # must be this exact value or serverless will append garbage
+          Fn::Join:
+            - ''
+            - - 'arn:'
+              - Ref: AWS::Partition
+              - ":s3:::atp-episodes"
     DockerRepo:
       Type: AWS::ECR::Repository
       Properties: 
@@ -76,7 +120,8 @@ resources:
             Environment:
               - Name: OUTPUT_S3_PATH
                 Value: 
-                  Ref: EpisodeBucket
+                  Fn::Join: [ "/", [ Ref: S3BucketAtpepisodes, "incoming/" ] ]
+                  
             Image: 
               Fn::Join: [ "", [ Fn::Join: [ ".", [ Ref: "AWS::AccountId", "dkr.ecr", Ref: "AWS::Region", Fn::Join: [ "/", [ "amazonaws.com", Ref: "DockerRepo" ] ] ] ] ] ]
             MemoryReservation: 512

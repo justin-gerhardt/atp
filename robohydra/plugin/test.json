@@ -1,0 +1,545 @@
+{
+    "operation": "REFRESH",
+    "titles": [
+      {
+        "id": 0,
+        "author": "radarskiy",
+        "title": "Chitchatting About Things That No One Cares About",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:07:45.657Z"
+      },
+      {
+        "id": 1,
+        "author": "slade401",
+        "title": "It's \"hi\"",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:08:58.258Z"
+      },
+      {
+        "id": 2,
+        "author": "weedmountain",
+        "title": "\"the Diameter of the Torus\"",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:11:34.891Z"
+      },
+      {
+        "id": 3,
+        "author": "RickAllen",
+        "title": "Torus Volume Thing",
+        "votes": 4,
+        "voted": false,
+        "time": "2018-10-04T01:12:29.908Z"
+      },
+      {
+        "id": 4,
+        "author": "roland00",
+        "title": "White Bread",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:13:42.483Z"
+      },
+      {
+        "id": 5,
+        "author": "slade401",
+        "title": "I'm a Terrible Bagel",
+        "votes": 3,
+        "voted": false,
+        "time": "2018-10-04T01:14:05.640Z"
+      },
+      {
+        "id": 6,
+        "author": "slade401",
+        "title": "Cake Bagel",
+        "votes": 3,
+        "voted": false,
+        "time": "2018-10-04T01:14:11.515Z"
+      },
+      {
+        "id": 7,
+        "author": "riffola",
+        "title": "Stunt Dessert",
+        "votes": 8,
+        "voted": false,
+        "time": "2018-10-04T01:14:17.097Z"
+      },
+      {
+        "id": 8,
+        "author": "chustar",
+        "title": "Close to a Bagel",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:15:56.806Z"
+      },
+      {
+        "id": 9,
+        "author": "RickAllen",
+        "title": "Formed in a Cake Pan",
+        "votes": 3,
+        "voted": false,
+        "time": "2018-10-04T01:16:14.176Z"
+      },
+      {
+        "id": 10,
+        "author": "shirley",
+        "title": "Big Guillotine Thing",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:16:23.986Z"
+      },
+      {
+        "id": 11,
+        "author": "chustar",
+        "title": "Hotel Breakfast Buffet",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:16:25.555Z"
+      },
+      {
+        "id": 12,
+        "author": "radarskiy",
+        "title": "That Kind of Bagel",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:16:37.627Z"
+      },
+      {
+        "id": 13,
+        "author": "RickAllen",
+        "title": "Other Round Bread Products",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:17:06.444Z"
+      },
+      {
+        "id": 14,
+        "author": "jjakucyk",
+        "title": "Round Bread Products",
+        "votes": 5,
+        "voted": false,
+        "time": "2018-10-04T01:17:20.358Z"
+      },
+      {
+        "id": 15,
+        "author": "yonatron",
+        "title": "Everything Bagels Are Better",
+        "votes": 3,
+        "voted": false,
+        "time": "2018-10-04T01:17:48.717Z"
+      },
+      {
+        "id": 16,
+        "author": "RickAllen",
+        "title": "Xeon Has More of Everything",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:22:48.087Z"
+      },
+      {
+        "id": 17,
+        "author": "SamTheGeek",
+        "title": "I Love It When a Plan Comes Together",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:26:51.991Z"
+      },
+      {
+        "id": 18,
+        "author": "yonatron",
+        "title": "They Put the Banana on Their Head",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:33:54.404Z"
+      },
+      {
+        "id": 19,
+        "author": "radarskiy",
+        "title": "The Stakes Can Be So Low",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:34:09.824Z"
+      },
+      {
+        "id": 20,
+        "author": "RickAllen",
+        "title": "The Alpha Dog",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:34:25.225Z"
+      },
+      {
+        "id": 21,
+        "author": "RickAllen",
+        "title": "Really Good at Putting Bananas on Their Head",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T01:39:22.963Z"
+      },
+      {
+        "id": 22,
+        "author": "radarskiy",
+        "title": "Now I Know Less Than the Average Person",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:40:25.842Z"
+      },
+      {
+        "id": 23,
+        "author": "riffola",
+        "title": "Right Click, What Are You Thnking?!",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:42:04.620Z"
+      },
+      {
+        "id": 24,
+        "author": "riffola",
+        "title": "Right Click, What Are You Thinking?!",
+        "votes": 3,
+        "voted": false,
+        "time": "2018-10-04T01:42:11.053Z"
+      },
+      {
+        "id": 25,
+        "author": "RickAllen",
+        "title": "Ios Mode With a Mouse Pointer",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:42:22.328Z"
+      },
+      {
+        "id": 26,
+        "author": "Marco\\",
+        "title": "The Intersection of Liberal Arts and Whatever",
+        "votes": 9,
+        "voted": false,
+        "time": "2018-10-04T01:47:49.801Z"
+      },
+      {
+        "id": 27,
+        "author": "RickAllen",
+        "title": "White Background, Dark Ink",
+        "votes": 4,
+        "voted": false,
+        "time": "2018-10-04T01:48:04.352Z"
+      },
+      {
+        "id": 28,
+        "author": "RickAllen",
+        "title": "Computers Are Not a Black Endless Void",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T01:48:53.144Z"
+      },
+      {
+        "id": 29,
+        "author": "caseyliss",
+        "title": "It Was Discoveryd’d",
+        "votes": 4,
+        "voted": false,
+        "time": "2018-10-04T01:51:01.292Z"
+      },
+      {
+        "id": 30,
+        "author": "RickAllen",
+        "title": "What Is Broken in .0",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T01:51:50.027Z"
+      },
+      {
+        "id": 31,
+        "author": "caseyliss",
+        "title": "My Stupid Laptop Has Various Ailments",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:51:51.602Z"
+      },
+      {
+        "id": 32,
+        "author": "riffola",
+        "title": "Fingerprint My Way Into It",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:52:03.456Z"
+      },
+      {
+        "id": 33,
+        "author": "RickAllen",
+        "title": "It Starts Beach-balling",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:52:20.101Z"
+      },
+      {
+        "id": 34,
+        "author": "riffola",
+        "title": "It's Just Beach-balls Everywhere",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:52:22.707Z"
+      },
+      {
+        "id": 35,
+        "author": "RickAllen",
+        "title": "My Computer Stops Making Sound",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:52:56.666Z"
+      },
+      {
+        "id": 36,
+        "author": "weedmountain",
+        "title": "\"maybe Mojave Fixes Something…\"",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:53:46.573Z"
+      },
+      {
+        "id": 37,
+        "author": "RickAllen",
+        "title": "Half Baked Support",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:56:53.138Z"
+      },
+      {
+        "id": 38,
+        "author": "riffola",
+        "title": "Tvos Updated and I Didn't Notice",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T01:57:04.087Z"
+      },
+      {
+        "id": 39,
+        "author": "RickAllen",
+        "title": "One Rotten Apple Spoils the Whole Bunch",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:59:28.901Z"
+      },
+      {
+        "id": 40,
+        "author": "sfaxon",
+        "title": "Better Life Choices",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T01:59:41.039Z"
+      },
+      {
+        "id": 41,
+        "author": "riffola",
+        "title": "You Wrote It Awkwardly",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:00:25.848Z"
+      },
+      {
+        "id": 42,
+        "author": "storms002",
+        "title": "The Macs",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T02:01:08.652Z"
+      },
+      {
+        "id": 43,
+        "author": "RickAllen",
+        "title": "Did I Just Say \"the Macs\"",
+        "votes": 4,
+        "voted": false,
+        "time": "2018-10-04T02:01:17.289Z"
+      },
+      {
+        "id": 44,
+        "author": "RickAllen",
+        "title": "Run by a Bean Counter",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:02:37.429Z"
+      },
+      {
+        "id": 45,
+        "author": "caseyliss",
+        "title": "That Isn’t Even the Present",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:05:00.297Z"
+      },
+      {
+        "id": 46,
+        "author": "roland00",
+        "title": "Stock People Don't Have Great Taste",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T02:09:46.868Z"
+      },
+      {
+        "id": 47,
+        "author": "radarskiy",
+        "title": "Make It Really Big",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:17:13.636Z"
+      },
+      {
+        "id": 48,
+        "author": "caseyliss",
+        "title": "Super Mac-ified",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:23:34.413Z"
+      },
+      {
+        "id": 49,
+        "author": "storms002",
+        "title": "I Don't Fear the Future",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:24:51.303Z"
+      },
+      {
+        "id": 50,
+        "author": "RickAllen",
+        "title": "Wherever You Have Your Thing Plugged In",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:31:16.310Z"
+      },
+      {
+        "id": 51,
+        "author": "roland00",
+        "title": "Trees and Things and Branching Hallways",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:41:41.220Z"
+      },
+      {
+        "id": 52,
+        "author": "RickAllen",
+        "title": "This Tree of Things in Branching Hallways",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:41:43.224Z"
+      },
+      {
+        "id": 53,
+        "author": "radarskiy",
+        "title": "You Can Ask for All the Files",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:42:59.894Z"
+      },
+      {
+        "id": 54,
+        "author": "caseyliss",
+        "title": "You Gotta Free Your Mind",
+        "votes": 3,
+        "voted": false,
+        "time": "2018-10-04T02:43:05.055Z"
+      },
+      {
+        "id": 55,
+        "author": "_CMF_",
+        "title": "Free Your Mind",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T02:43:21.914Z"
+      },
+      {
+        "id": 56,
+        "author": "htmlarson",
+        "title": "Hardware Bug",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T02:44:32.835Z"
+      },
+      {
+        "id": 57,
+        "author": "storms002",
+        "title": "It May Kill Bugs",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:44:43.764Z"
+      },
+      {
+        "id": 58,
+        "author": "RickAllen",
+        "title": "World's Most Ham-fisted Drone Pilot",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T02:47:50.468Z"
+      },
+      {
+        "id": 59,
+        "author": "KimAhlberg",
+        "title": "It Tracks Toddlers",
+        "votes": 6,
+        "voted": false,
+        "time": "2018-10-04T02:48:07.426Z"
+      },
+      {
+        "id": 60,
+        "author": "riffola",
+        "title": "Professional Driver. Closed Course.",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T03:02:49.128Z"
+      },
+      {
+        "id": 61,
+        "author": "AAALLL",
+        "title": "Its Sirious",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T03:07:48.193Z"
+      },
+      {
+        "id": 62,
+        "author": "htmlarson",
+        "title": "Reasonable Reason to Have It",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T03:08:28.664Z"
+      },
+      {
+        "id": 63,
+        "author": "htmlarson",
+        "title": "Marco's Gonna Marco",
+        "votes": 2,
+        "voted": false,
+        "time": "2018-10-04T03:08:35.396Z"
+      },
+      {
+        "id": 64,
+        "author": "RickAllen",
+        "title": "Marco Is Gonna Marco",
+        "votes": 1,
+        "voted": false,
+        "time": "2018-10-04T03:08:57.287Z"
+      }
+    ],
+    "links": [
+      {
+        "id": 0,
+        "author": "KimAhlberg",
+        "link": "https://twitter.com/lindadong/status/1046253439255117824",
+        "time": "2018-10-04T01:35:59.621Z"
+      },
+      {
+        "id": 1,
+        "author": "riffola",
+        "link": "https://sixcolors.com/post/2018/09/hazeover-makes-dark-mode-that-much-darker/",
+        "time": "2018-10-04T01:45:57.838Z"
+      },
+      {
+        "id": 2,
+        "author": "_CMF_",
+        "link": "https://goo.gl/images/dbupyK",
+        "time": "2018-10-04T03:22:44.398Z"
+      }
+    ]
+  }

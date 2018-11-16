@@ -1,6 +1,7 @@
 build:
 	dep ensure -v
-	env GOOS=linux go build -ldflags="-s -w" -o bin/StreamStatus src/StreamStatus.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/StreamStatus src/StreamStatus/StreamStatus.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/RSS src/rss/rss.go
 
 .PHONY: clean
 clean:

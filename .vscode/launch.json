@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "debug",
             "showLog": true,
-            "program": "${workspaceRoot}/src/main.go",
+            "program": "${workspaceRoot}/src/rss/rss.go",
             "env": {
                 "IS_OFFLINE": "TRUE",
                 "CLUSTER": "arn:aws:ecs:us-east-1:558709501430:cluster/ATP-Downloader-Cluster",

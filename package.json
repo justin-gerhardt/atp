@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/justin-gerhardt/atp#readme",
   "devDependencies": {
+    "robohydra": "^0.6.8",
     "serverless": "^1.32.0"
   }
 }
