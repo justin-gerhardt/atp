@@ -140,7 +140,7 @@ func uploadRSStoS3(feed string, sess *session.Session, bucket string) error {
 
 func main() {
 	if os.Getenv("IS_OFFLINE") == "TRUE" {
-		err := handler(nil, getExampleEvent2())
+		err := handler(nil, getExampleEvent())
 		if err != nil {
 			log.Printf("%s", err)
 		}
@@ -150,13 +150,6 @@ func main() {
 }
 
 func getExampleEvent() events.S3Event {
-	var event events.S3Event
-	data := []byte(`{"Records":[{"eventVersion":"2.0","eventSource":"aws:s3","awsRegion":"us-east-1","eventTime":"2018-11-15T04:08:43.47Z","eventName":"ObjectCreated:Put","userIdentity":{"principalId":"A1EI5Z9V6UZIN8"},"requestParameters":{"sourceIPAddress":"67.193.138.73"},"responseElements":{"x-amz-id-2":"P1CuSIz75d7sjYEhT0FnmUIO82J75KtO+67/D2W+pOQAmRXmfsskJ/PvaG+N0UL70svTelMTLaw=","x-amz-request-id":"48B07CCF65CFDF38"},"s3":{"s3SchemaVersion":"1.0","configurationId":"795248a1-52d7-40bb-b813-59c1c44eee2c","bucket":{"name":"atp-episodes","ownerIdentity":{"principalId":"A1EI5Z9V6UZIN8"},"arn":"arn:aws:s3:::atp-episodes"},"object":{"key":"incoming/Text+File+%281%29.mp3","size":2,"urlDecodedKey":"","versionId":"","eTag":"d784fa8b6d98d27699781bd9a7cf19f0","sequencer":"005BECF14B6DF47EEF"}}}]}`)
-	json.Unmarshal(data, &event)
-	return event
-}
-
-func getExampleEvent2() events.S3Event {
 	var event events.S3Event
 	data := []byte(`{"Records":[{"eventVersion":"2.0","eventSource":"aws:s3","awsRegion":"us-east-1","eventTime":"2018-11-15T04:08:43.47Z","eventName":"BLAHObjectCreated:Put","userIdentity":{"principalId":"A1EI5Z9V6UZIN8"},"requestParameters":{"sourceIPAddress":"67.193.138.73"},"responseElements":{"x-amz-id-2":"P1CuSIz75d7sjYEhT0FnmUIO82J75KtO+67/D2W+pOQAmRXmfsskJ/PvaG+N0UL70svTelMTLaw=","x-amz-request-id":"48B07CCF65CFDF38"},"s3":{"s3SchemaVersion":"1.0","configurationId":"795248a1-52d7-40bb-b813-59c1c44eee2c","bucket":{"name":"atp-episodes","ownerIdentity":{"principalId":"A1EI5Z9V6UZIN8"},"arn":"arn:aws:s3:::atp-episodes"},"object":{"key":"incoming/Text+File+%281%29.mp3","size":2,"urlDecodedKey":"","versionId":"","eTag":"d784fa8b6d98d27699781bd9a7cf19f0","sequencer":"005BECF14B6DF47EEF"}}}]}`)
 	json.Unmarshal(data, &event)

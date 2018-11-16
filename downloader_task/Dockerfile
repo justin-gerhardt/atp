@@ -6,4 +6,4 @@ WORKDIR /tmp/workdir
 
 COPY upload.sh /tmp/workdir
 
-ENTRYPOINT wget http://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_1MG.mp3 -O `date --utc +%s`.mp3 && ./upload.sh
+ENTRYPOINT wget http://marco.org:8001/listen -O `date --utc +%s`.mp3 && ./upload.sh
