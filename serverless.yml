@@ -61,7 +61,10 @@ resources:
                   - lambda.amazonaws.com
               Action: sts:AssumeRole
         ManagedPolicyArns:
-          - arn:aws:iam::aws:policy/AdministratorAccess
+          - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+          - arn:aws:iam::aws:policy/AmazonECS_FullAccess
+          - arn:aws:iam::aws:policy/AmazonS3FullAccess
+          - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
     S3BucketAtpepisodes: # name must be this for serverless to wire up the events
       Type: AWS::S3::Bucket
       Properties: 
@@ -97,7 +100,9 @@ resources:
                   - ecs-tasks.amazonaws.com
               Action: sts:AssumeRole
         ManagedPolicyArns:
-          - arn:aws:iam::aws:policy/AdministratorAccess
+          - arn:aws:iam::aws:policy/AmazonECS_FullAccess
+          - arn:aws:iam::aws:policy/AmazonS3FullAccess
+          - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
     TaskLogGroup:
       Type: AWS::Logs::LogGroup
       Properties: 
