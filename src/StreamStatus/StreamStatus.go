@@ -101,7 +101,7 @@ func handler(ctx context.Context) error {
 }
 
 func isLive() (bool, error) {
-	stream, err := http.Get("http://marco.org:8001/listen")
+	stream, err := http.Get("https://atp.fm:8443/listen")
 	//stream, err := http.Get("https://httpstat.us/401")
 	if err != nil {
 		return false, errors.Wrap(err, "Can't check if stream is online. The request failed")
